@@ -5,13 +5,32 @@
         <title>
             bone-conducted speech Enhancement
         </title>
+        <style type="text/css">
+            table{
+                border-collapse: collapse;
+            }
+            table,th,tr,td{
+                border-bottom:1px solid #dedede;
+            }
+            td{
+                padding: 10px;
+            }
+            audio{
+                width: 220px;
+                
+            }
+            body{
+                margin-left: 200px;
+                margin-right: 200px;
+            }
+        </style>
     </head>
     <body>
-        <h2 align="center" style="margin-left: 50px;margin-right: 50px;">
+        <h2 align="center">
             Audio Sample for "Bone-Conducted Speech to Air-Conducted Speech Conversion Based on Cycle-Consistent Adversarial Networks"
         </h2>
         <!-- <h3>Paper:</h3> -->
-        <div align="center" style="margin-left: 50px;margin-right: 50px;">
+        <div align="center">
             Paper is accepted by 020 IEEE 3rd International Conference on Information Communication and Signal Processing (ICICSP)
             (available at <a href="https://ieeexplore.ieee.org/document/9232121">here</a>)
         </div>
@@ -21,24 +40,24 @@
             Qing Pan, Jian Zhou, Teng Gao, Liang Tao
         </div>
         &nbsp;
-        <div style="margin-left: 50px;margin-right: 50px;">
+        <div>
             <b>Abstract:</b>
-            "Compared with traditional Air-Conducted Microphone (ACM) speech, Bone-Conducted Microphone (BCM) speech has the advantage of shielding 
+            Compared with traditional Air-Conducted Microphone (ACM) speech, Bone-Conducted Microphone (BCM) speech has the advantage of shielding 
         background noise and helps to improve the communication quality in the strong noise environment. This paper proposes a method that uses 
         Cycle-Consistent Adversarial Networks (CycleGAN) to extend the bandwidth for converting BCM speech to ACM speech based on the analysis of 
         the bandwidth difference. The proposed method learns the mapping relationship between BCM speech and ACM speech without relying on parallel 
         data, and does not require any additional data, modules or alignment process, it also avoids the over smoothing that is easy to appear in 
         many statistical models. The experimental results show that the method can better reconstruct the high-frequency components of BCM speech. 
         Compared with the original speech, it improves the subjective and objective results, and obtains Mel-spectrum features with higher similarity 
-        to the target speech."
+        to the target speech.
         </div>
 
         <p>&nbsp;</p>
         <hr>
-        <h3 style="margin-left: 50px;">Ground truth target samples</h3>
+        <h3>Ground truth target samples</h3>
 
-        <table border="1" style="margin-left: 50px;">
-            <tbody>
+        <table>
+            <thead>
                 <tr>
                     <th>
                         <div align="center">Speakers</div>
@@ -50,6 +69,8 @@
                         <p align="center">target</p>
                     </th>
                 </tr>
+            </thead>
+            <tbody>               
                 <tr>
                     <td>female</td>
                     <td>
@@ -84,13 +105,13 @@
                     <td>01</td>
                     <td>
                         <audio controls>
-                            <source src="wavs/tai/source/01/011318.wav" type="audio/wav">
+                            <source src="wavs/tai/source/01/011404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>
                     </td>
                     <td>
                         <audio controls>
-                            <source src="wavs/tai/target/01/011318.wav" type="audio/wav">
+                            <source src="wavs/tai/target/01/011404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>
                     </td>
@@ -99,13 +120,13 @@
                     <td>02</td>
                     <td>
                         <audio controls>
-                            <source src="wavs/tai/source/02/021318.wav" type="audio/wav">
+                            <source src="wavs/tai/source/02/021404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>
                     </td>
                     <td>
                         <audio controls>
-                            <source src="wavs/tai/target/02/021318.wav" type="audio/wav">
+                            <source src="wavs/tai/target/02/021404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>
                     </td>
@@ -114,13 +135,13 @@
                     <td>03</td>
                     <td>
                         <audio controls>
-                            <source src="wavs/tai/source/03/031318.wav" type="audio/wav">
+                            <source src="wavs/tai/source/03/031404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>
                     </td>
                     <td>
                         <audio controls>
-                            <source src="wavs/tai/target/03/031318.wav" type="audio/wav">
+                            <source src="wavs/tai/target/03/031404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>
                     </td>
@@ -129,13 +150,13 @@
                     <td>04</td>
                     <td>
                         <audio controls>
-                            <source src="wavs/tai/source/04/041318.wav" type="audio/wav">
+                            <source src="wavs/tai/source/04/041404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>
                     </td>
                     <td>
                         <audio controls>
-                            <source src="wavs/tai/target/04/041318.wav" type="audio/wav">
+                            <source src="wavs/tai/target/04/041404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>
                     </td>
@@ -144,13 +165,13 @@
                     <td>05</td>
                     <td>
                         <audio controls>
-                            <source src="wavs/tai/source/05/051318.wav" type="audio/wav">
+                            <source src="wavs/tai/source/05/051404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>
                     </td>
                     <td>
                         <audio controls>
-                            <source src="wavs/tai/target/05/051318.wav" type="audio/wav">
+                            <source src="wavs/tai/target/05/051404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>
                     </td>
@@ -159,90 +180,92 @@
                     <td>06</td>
                     <td>
                         <audio controls>
-                            <source src="wavs/tai/source/06/061318.wav" type="audio/wav">
+                            <source src="wavs/tai/source/06/061404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>
                     </td>
                     <td>
                         <audio controls>
-                            <source src="wavs/tai/target/06/061318.wav" type="audio/wav">
+                            <source src="wavs/tai/target/06/061404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>
                     </td>
                 </tr>
             </tbody>
         </table>
-        <p style="margin-left: 50px;margin-right: 50px;">
+        <p>
             female" and "male" belong to dataset <a href="https://github.com/echoaimaomao/TM-Speech-Dataset">AEUCHSAC&BC-2017 corpus.</a>
             The paper is available at <a href="https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&dbname=CJFDLAST2019&filename=SXJS201903015&v=d05mCpV2RYLs8ng71bnC33CnjR5MYIoqBZc7RJIfetbtVBAvXWPauy7au%25mmd2FQ5YjXj">here.</a>
         </p>
-        <p style="margin-left: 50px;margin-right: 50px;">
+        <p>
             01"、"02"、"03"、"04"、"05"、"06" belong to dataset MHINT.
             The paper is available at <a href="https://www.onacademic.com/detail/journal_1000039411826010_f256.html">here.</a>
         </p>
 
 
         <p>&nbsp;</p>
-        <h3 style="margin-left: 50px;">Comparision of proposed method to baseline methods</h3>
-        <table border="1" style="margin-left: 50px;margin-right: 50px;">
-            <tbody>
+        <h3>Comparision of proposed method to baseline methods</h3>
+        <table>
+            <thead>
                 <tr>
                     <th>
                         <div align="center">Speakers</div>
                     </th>
                     <th>
-                        <p align="center" style="width: 280px;">GMM_w</p>
+                        <p align="center">GMM_w</p>
                     </th>
                     <th>
-                        <p align="center" style="width: 280px;">GMM_wo</p>
+                        <p align="center">GMM_wo</p>
                     </th>
                     <th>
-                        <p align="center" style="width: 280px;">BLSTM</p>
+                        <p align="center">BLSTM</p>
                     </th>
                     <th>
-                        <p align="center" style="width: 280px;">non-para</p>
+                        <p align="center">non-para</p>
                     </th>
                     <th>
-                        <p align="center" style="width: 280px;">para</p>
+                        <p align="center">para</p>
                     </th>
                     <th>
-                        <p align="center" style="width: 280px;">para-adv2</p>
+                        <p align="center">para-adv2</p>
                     </th>
                 </tr>
+            </thead>
+            <tbody>
                 <tr>
                     <td >female</td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
+                    <td>
+                        <audio controls>
                             <source src="wavs/army/gmm/female/w_MLPG_1.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
+                    <td>
+                        <audio controls>
                             <source src="wavs/army/gmm/female/wo_MLPG_1.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
+                    <td>
+                        <audio controls>
                             <source src="wavs/army/blstm/female/1.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
+                    <td>
+                        <audio controls>
                             <source src="wavs/army/nopara/female/1.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
+                    <td>
+                        <audio controls>
                             <source src="wavs/army/para/female/1.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
+                    <td>
+                        <audio controls>
                             <source src="wavs/army/para-adv2/female/1.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>
@@ -250,38 +273,38 @@
                 </tr>
                 <tr>
                     <td>male</td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
+                    <td>
+                        <audio controls>
                             <source src="wavs/army/gmm/male/w_MLPG_1.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
+                    <td>
+                        <audio controls>
                             <source src="wavs/army/gmm/male/wo_MLPG_1.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
+                    <td>
+                        <audio controls>
                             <source src="wavs/army/blstm/male/1.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
+                    <td>
+                        <audio controls>
                             <source src="wavs/army/nopara/male/1.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
+                    <td>
+                        <audio controls>
                             <source src="wavs/army/para/male/1.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
+                    <td>
+                        <audio controls>
                             <source src="wavs/army/para-adv2/male/1.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
@@ -289,116 +312,116 @@
                 </tr>
                 <tr>
                     <td>01</td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
-                            <source src="wavs/tai/gmm/01/w_MLPG_011318.wav" type="audio/wav">
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/gmm/01/w_MLPG_011404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
-                            <source src="wavs/tai/gmm/01/wo_MLPG_011318.wav" type="audio/wav">
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/gmm/01/wo_MLPG_011404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
-                            <source src="wavs/tai/blstm/01/011318.wav" type="audio/wav">
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/blstm/01/011404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
-                            <source src="wavs/tai/non-para/01/011318.wav" type="audio/wav">
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/non-para/01/011404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <!-- <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
-                            <source src="wavs/tai/para/01/" type="audio/wav">
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/para/01/011404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
-                            <source src="wavs/army/para-adv2/male/1.wav" type="audio/wav">
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/para-adv2/01/011404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
-                    </td> -->
+                    </td>
                 </tr>
                 <tr>
                     <td>02</td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
-                            <source src="wavs/tai/gmm/02/w_MLPG_021318.wav" type="audio/wav">
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/gmm/02/w_MLPG_021404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
-                            <source src="wavs/tai/gmm/02/wo_MLPG_021318.wav" type="audio/wav">
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/gmm/02/wo_MLPG_021404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
-                            <source src="wavs/tai/blstm/02/021318.wav" type="audio/wav">
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/blstm/02/021404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <!-- <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
-                            <source src="wavs/tai/non-para/02/" type="audio/wav">
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/non-para/02/021404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
-                            <source src="wavs/tai/para/01/" type="audio/wav">
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/para/02/021404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
-                            <source src="wavs/army/para-adv2/male/1.wav" type="audio/wav">
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/para-adv2/02/021404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
-                    </td> -->
+                    </td>
                 </tr>
                 <tr>
                     <td>03</td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
-                            <source src="wavs/tai/gmm/03/w_MLPG_031318.wav" type="audio/wav">
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/gmm/03/w_MLPG_031404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
-                            <source src="wavs/tai/gmm/03/wo_MLPG_031318.wav" type="audio/wav">
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/gmm/03/wo_MLPG_031404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
-                            <source src="wavs/tai/blstm/03/031318.wav" type="audio/wav">
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/blstm/03/031404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <!-- <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
+                    <!-- <td>
+                        <audio controls>
                             <source src="wavs/tai/non-para/02/" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
+                    <td>
+                        <audio controls>
                             <source src="wavs/tai/para/01/" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
+                    <td>
+                        <audio controls>
                             <source src="wavs/army/para-adv2/male/1.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
@@ -406,38 +429,38 @@
                 </tr>
                 <tr>
                     <td>04</td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
-                            <source src="wavs/tai/gmm/04/w_MLPG_041318.wav" type="audio/wav">
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/gmm/04/w_MLPG_041404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
-                            <source src="wavs/tai/gmm/04/wo_MLPG_041318.wav" type="audio/wav">
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/gmm/04/wo_MLPG_041404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
-                            <source src="wavs/tai/blstm/04/041318.wav" type="audio/wav">
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/blstm/04/041404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <!-- <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
+                    <!-- <td>
+                        <audio controls>
                             <source src="wavs/tai/non-para/02/" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
+                    <td>
+                        <audio controls>
                             <source src="wavs/tai/para/01/" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
+                    <td>
+                        <audio controls>
                             <source src="wavs/army/para-adv2/male/1.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
@@ -445,38 +468,38 @@
                 </tr>
                 <tr>
                     <td>05</td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
-                            <source src="wavs/tai/gmm/05/w_MLPG_051318.wav" type="audio/wav">
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/gmm/05/w_MLPG_051404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
-                            <source src="wavs/tai/gmm/05/wo_MLPG_051318.wav" type="audio/wav">
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/gmm/05/wo_MLPG_051404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
-                            <source src="wavs/tai/blstm/05/051318.wav" type="audio/wav">
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/blstm/05/051404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <!-- <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
+                    <!-- <td>
+                        <audio controls>
                             <source src="wavs/tai/non-para/02/" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
+                    <td>
+                        <audio controls>
                             <source src="wavs/tai/para/01/" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
+                    <td>
+                        <audio controls>
                             <source src="wavs/army/para-adv2/male/1.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
@@ -484,46 +507,46 @@
                 </tr>
                 <tr>
                     <td>06</td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
-                            <source src="wavs/tai/gmm/06/w_MLPG_061318.wav" type="audio/wav">
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/gmm/06/w_MLPG_061404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
-                            <source src="wavs/tai/gmm/06/wo_MLPG_061318.wav" type="audio/wav">
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/gmm/06/wo_MLPG_061404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
-                            <source src="wavs/tai/blstm/06/061318.wav" type="audio/wav">
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/blstm/06/061404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <!-- <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
-                            <source src="wavs/tai/non-para/02/" type="audio/wav">
-                            Your browser does not support this audio format.
-                        </audio>    
-                    </td> -->
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
-                            <source src="wavs/tai/para/06/061318.wav" type="audio/wav">
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/non-para/06/061404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <td style="width: 280px;">
-                        <audio controls style="width: 280px;">
-                            <source src="wavs/tai/para-adv2/06/061318.wav" type="audio/wav">
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/para/06/061404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/para-adv2/06/061404.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
                 </tr>
             </tbody>
         </table>
-        <p style="margin-left: 50px;">"non-para" represents non-parallel CycleGAN, "para" indicates parallel CycleGAN, "para-adv2" denotes proposed method.</p>
+        <p>"non-para" represents non-parallel CycleGAN, "para" indicates parallel CycleGAN, "para-adv2" denotes proposed method.</p>
         <p>&nbsp;</p>
         <p>&nbsp;</p>
         <p>&nbsp;</p>
