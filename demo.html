@@ -16,7 +16,7 @@
                 padding: 10px;
             }
             audio{
-                width: 200px;
+                width: 220px;
             }
             body{
                 margin-left: 200px;
@@ -26,29 +26,30 @@
     </head>
     <body>
         <h2 align="center">
-            Audio Sample for "Bone-Conducted Speech to Air-Conducted Speech Conversion Based on Cycle-Consistent Adversarial Networks"
+            Audio Sample for "Parallel CycleGAN Bone-Conducted Speech Enhancement with Dual Adversarial Loss"
         </h2>
         <!-- <h3>Paper:</h3> -->
-        <div align="center">
+        <!-- <div align="center">
             Paper is accepted by 2020 IEEE 3rd International Conference on Information Communication and Signal Processing (ICICSP)
             (available at <a href="https://ieeexplore.ieee.org/document/9232121">here</a>)
-        </div>
+        </div> -->
         &nbsp;
         <div align="center">
             <b>Author:</b>
-            Qing Pan, Jian Zhou, Teng Gao, Liang Tao
+            Qing Pan, Teng Gao, Jian Zhou, Huabin Wang, Liang Tao, and Li Zhao
         </div>
         &nbsp;
         <div>
             <b>Abstract:</b>
-            Compared with traditional Air-Conducted Microphone (ACM) speech, Bone-Conducted Microphone (BCM) speech has the advantage of shielding 
-        background noise and helps to improve the communication quality in the strong noise environment. This paper proposes a method that uses 
-        Cycle-Consistent Adversarial Networks (CycleGAN) to extend the bandwidth for converting BCM speech to ACM speech based on the analysis of 
-        the bandwidth difference. The proposed method learns the mapping relationship between BCM speech and ACM speech without relying on parallel 
-        data, and does not require any additional data, modules or alignment process, it also avoids the over smoothing that is easy to appear in 
-        many statistical models. The experimental results show that the method can better reconstruct the high-frequency components of BCM speech. 
-        Compared with the original speech, it improves the subjective and objective results, and obtains Mel-spectrum features with higher similarity 
-        to the target speech.
+            Compared with air-conducted speech, bone-conducted speech has the unique advantage of shielding background noise. 
+            Enhancement of Bone-conducted speech helps to improve the quality of voice communication in strong noisy environment. 
+            This paper proposes a parallel CycleGAN bone-conducted speech enhancement method based on dual adversarial loss. 
+            The method uses adversarial loss and cyclic consistent loss to learn forward and cyclic mapping simultaneously, 
+            and divides the adversarial loss into classification adversarial loss and defect adversarial loss to consolidate the forward mapping. 
+            Compared with the conventional method, it learns the mapping between source and target speech without relying on air-conducted speech assistance. 
+            Moreover, it also avoids the over-smooth phenomenon which is common in statistical models. 
+            The experimental results show that the subjective and objective indicators are not only better than the baseline CycleGAN, 
+            but also superior to GMM and BLSTM.
         </div>
 
         <p>&nbsp;</p>
@@ -484,24 +485,24 @@
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
-                    <td>
+                    <!-- <td>
                         <audio controls>
-                            <source src="wavs/tai/non-para/05/051404.wav" type="audio/wav">
+                            <source src="wavs/tai/non-para/02/" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
                     <td>
                         <audio controls>
-                            <source src="wavs/tai/para/05/051404.wav" type="audio/wav">
+                            <source src="wavs/tai/para/01/" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
                     </td>
                     <td>
                         <audio controls>
-                            <source src="wavs/tai/para-adv2/05/051404.wav" type="audio/wav">
+                            <source src="wavs/army/para-adv2/male/1.wav" type="audio/wav">
                             Your browser does not support this audio format.
                         </audio>    
-                    </td>
+                    </td> -->
                 </tr>
                 <tr>
                     <td>06</td>
