@@ -26,7 +26,7 @@
     </head>
     <body>
         <h2 align="center">
-            Audio Sample for "Parallel CycleGAN Bone-Conducted Speech Enhancement with Dual Adversarial Loss"
+            Demos for "Parallel CycleGAN with Dual Adversarial Loss for Bone-Conducted Speech Enhancement"
         </h2>
         <!-- <h3>Paper:</h3> -->
         <!-- <div align="center">
@@ -36,20 +36,20 @@
         &nbsp;
         <div align="center">
             <b>Author:</b>
-            Qing Pan, Teng Gao, Jian Zhou, Huabin Wang, Liang Tao, and Li Zhao
+            Qing Pan, Teng Gao, Jian Zhou, Huabin Wang, Liang Tao, and Hon Keung Kwan
         </div>
         &nbsp;
         <div>
             <b>Abstract:</b>
             Compared with air-conducted speech, bone-conducted speech has the unique advantage of shielding background noise. 
-            Enhancement of bone-conducted speech helps to improve the quality of voice communication in adverse noisy environment. 
-            This paper proposes a parallel CycleGAN based bone-conducted speech enhancement method with dual adversarial loss. 
-            The proposed method uses adversarial loss and cyclic consistent loss simultaneously to learn forward and cyclic mapping, 
-            and divides the adversarial loss into classification adversarial loss and defect adversarial loss to consolidate the forward mapping. 
-            Compared with conventional baseline methods, it learns feature mapping between bone-conducted speech and target speech 
-            without air-conducted speech assistance. Moreover, it also avoids the over-smooth issue which is occurred commonly in 
-            conventional statistical based models. The experimental results show that the proposed method outperforms the baseline CycleGAN, 
-            GMM and BLSTM.
+            Enhancement of bone-conducted speech helps to improve its quality and intelligibility. 
+            In this paper, a novel Parallel CycleGAN with dual adversarial loss is proposed for bone-conducted speech enhancement. 
+            The proposed method uses an adversarial loss and a cyclic consistent loss simultaneously to learn forward and cyclic mapping, 
+            in which the adversarial loss is divided into the classification adversarial loss and the defect adversarial loss to 
+            consolidate the forward mapping. Compared with conventional baseline methods, it can learn feature mapping between bone-conducted speech 
+            and target speech without additional air-conducted speech assistance. Moreover, the proposed method also avoids the over-smooth problem 
+            which is occurred commonly in conventional statistical based models. Experimental results show that the proposed method outperforms 
+            baseline methods such as CycleGAN, GMM, and BLSTM.
         </div>
 
         <p>&nbsp;</p>
@@ -198,7 +198,7 @@
             The paper is available at <a href="https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&dbname=CJFDLAST2019&filename=SXJS201903015&v=d05mCpV2RYLs8ng71bnC33CnjR5MYIoqBZc7RJIfetbtVBAvXWPauy7au%25mmd2FQ5YjXj">here.</a>
         </p>
         <p>
-            Speakers "01"、"02"、"03"、"04"、"05"、"06" dataset belong to the paper <a href="https://www.onacademic.com/detail/journal_1000039411826010_f256.html">here.</a>
+            Speakers "01"、"02"、"03"、"04"、"05"、"06" belong to the paper <a href="https://www.onacademic.com/detail/journal_1000039411826010_f256.html">here.</a>
         </p>
 
 
@@ -220,13 +220,13 @@
                         <p align="center">BLSTM</p>
                     </th>
                     <th>
-                        <p align="center">non-para</p>
+                        <p align="center">NPM</p>
                     </th>
                     <th>
-                        <p align="center">para</p>
+                        <p align="center">PMA</p>
                     </th>
                     <th>
-                        <p align="center">para-adv2</p>
+                        <p align="center">PMA2</p>
                     </th>
                 </tr>
             </thead>
@@ -545,7 +545,7 @@
                 </tr>
             </tbody>
         </table>
-        <p>"non-para" represents non-parallel CycleGAN, "para" indicates parallel CycleGAN, "para-adv2" denotes proposed method.</p>
+        <p>"NPM" represents nonparallel CycleGAN, "PMA" indicates parallel CycleGAN, "PMA2" denotes parallel CycleGAN with dual adversarial loss.</p>
         <p>&nbsp;</p>
         <p>&nbsp;</p>
         <p>&nbsp;</p>
