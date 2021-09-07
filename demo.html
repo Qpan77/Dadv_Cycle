@@ -26,7 +26,7 @@
     </head>
     <body>
         <h2 align="center">
-            Demos for "Parallel CycleGAN with Dual Adversarial Loss for Bone-Conducted Speech Enhancement"
+            Demos for "CycleGAN with Dual Adversarial Loss for Bone-Conducted Speech Enhancement"
         </h2>
         <!-- <h3>Paper:</h3> -->
         <!-- <div align="center">
@@ -43,13 +43,12 @@
             <b>Abstract:</b>
             Compared with air-conducted speech, bone-conducted speech has the unique advantage of shielding background noise. 
             Enhancement of bone-conducted speech helps to improve its quality and intelligibility. 
-            In this paper, a novel Parallel CycleGAN with dual adversarial loss is proposed for bone-conducted speech enhancement. 
-            The proposed method uses an adversarial loss and a cyclic consistent loss simultaneously to learn forward and cyclic mapping, 
-            in which the adversarial loss is divided into the classification adversarial loss and the defect adversarial loss to 
-            consolidate the forward mapping. Compared with conventional baseline methods, it can learn feature mapping between bone-conducted speech 
-            and target speech without additional air-conducted speech assistance. Moreover, the proposed method also avoids the over-smooth problem 
-            which is occurred commonly in conventional statistical based models. Experimental results show that the proposed method outperforms 
-            baseline methods such as CycleGAN, GMM, and BLSTM.
+            In this paper, a novel CycleGAN with dual adversarial loss (CycleGAN-DAL) is proposed for bone-conducted speech enhancement. 
+            The proposed method uses the adversarial loss and the cycle-consistent loss simultaneously to learn forward and cyclic mapping, 
+            in which the adversarial loss is replaced with the classification adversarial loss and the defect adversarial loss to consolidate the forward mapping. 
+            Compared with conventional baseline methods, it can learn feature mapping between bone-conducted speech and target speech without additional 
+            air-conducted speech assistance. Moreover, the proposed method also avoids the over-smooth problem which is occurred commonly in conventional statistical 
+            based models. Experimental results show that the proposed method outperforms baseline methods such as CycleGAN, GMM, and BLSTM.
         </div>
 
         <p>&nbsp;</p>
@@ -220,13 +219,13 @@
                         <p align="center">BLSTM</p>
                     </th>
                     <th>
-                        <p align="center">NPM</p>
+                        <p align="center">NMC</p>
                     </th>
                     <th>
-                        <p align="center">PMA</p>
+                        <p align="center">PMC</p>
                     </th>
                     <th>
-                        <p align="center">PMA2</p>
+                        <p align="center">PMCD</p>
                     </th>
                 </tr>
             </thead>
@@ -545,7 +544,7 @@
                 </tr>
             </tbody>
         </table>
-        <p>"NPM" represents nonparallel CycleGAN, "PMA" indicates parallel CycleGAN, "PMA2" denotes parallel CycleGAN with dual adversarial loss.</p>
+        <p>"NMC" represents nonparallel CycleGAN, "PMC" indicates parallel CycleGAN, "PMCD" denotes parallel CycleGAN with dual adversarial loss.</p>
         <p>&nbsp;</p>
         <p>&nbsp;</p>
         <p>&nbsp;</p>
