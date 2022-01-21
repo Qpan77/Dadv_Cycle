@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            bone-conducted speech Enhancement
+        </title>
+        <style type="text/css">
+            table{
+                border-collapse: collapse;
+            }
+            table,th,tr,td{
+                border-bottom:1px solid #dedede;
+            }
+            td{
+                padding: 10px;
+            }
+            audio{
+                width: 220px;
+            }
+            /* body{
+                margin-left: 200px;
+                margin-right: 200px;
+            } */
+        </style>
+    </head>
+    <body>
+        <h2 align="center">
+            Demos for "CycleGAN with Dual Adversarial Loss for Bone-Conducted Speech Enhancement"
+        </h2>
+        <!-- <h3>Paper:</h3> -->
+        <!-- <div align="center">
+            Paper is accepted by 2020 IEEE 3rd International Conference on Information Communication and Signal Processing (ICICSP)
+            (available at <a href="https://ieeexplore.ieee.org/document/9232121">here</a>)
+        </div> -->
+        &nbsp;
+        <div align="center">
+            <b>Author:</b>
+            Qing Pan, Teng Gao, Jian Zhou, Huabin Wang, Liang Tao, and Hon Keung Kwan
+        </div>
+        &nbsp;
+        <div>
+            <b>Abstract:</b>
+            Compared with air-conducted speech, bone-conducted speech has the unique advantage of shielding background noise. 
+            Enhancement of bone-conducted speech helps to improve its quality and intelligibility. 
+            In this paper, a novel CycleGAN with dual adversarial loss (CycleGAN-DAL) is proposed for bone-conducted speech enhancement. 
+            The proposed method uses the adversarial loss and the cycle-consistent loss simultaneously to learn forward and cyclic mapping, 
+            in which the adversarial loss is replaced with the classification adversarial loss and the defect adversarial loss to consolidate the forward mapping. 
+            Compared with conventional baseline methods, it can learn feature mapping between bone-conducted speech and target speech without additional 
+            air-conducted speech assistance. Moreover, the proposed method also avoids the over-smooth problem which is occurred commonly in conventional statistical 
+            based models. Experimental results show that the proposed method outperforms baseline methods such as CycleGAN, GMM, and BLSTM.
+        </div>
+
+        <p>&nbsp;</p>
+        <hr>
+        <h3>Ground truth target samples</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <div align="center">Speakers</div>
+                    </th>
+                    <th>
+                        <p align="center">source</p>
+                    </th>
+                    <th>
+                        <p align="center">target</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>               
+                <tr>
+                    <td>female</td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/army/source/female/1.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/army/target/female/1.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td>male</td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/army/source/male/1.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/army/target/male/1.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td>01</td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/source/01/011404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/target/01/011404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/source/02/021404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/target/02/021404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td>03</td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/source/03/031404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/target/03/031404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td>04</td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/source/04/041404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/target/04/041404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td>05</td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/source/05/051404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/target/05/051404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td>06</td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/source/06/061404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/target/06/061404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            Speakers "female" and "male" belong to dataset <a href="https://github.com/echoaimaomao/TM-Speech-Dataset">AEUCHSAC&BC-2017 corpus.</a>
+            The paper is available at <a href="https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&dbname=CJFDLAST2019&filename=SXJS201903015&v=d05mCpV2RYLs8ng71bnC33CnjR5MYIoqBZc7RJIfetbtVBAvXWPauy7au%25mmd2FQ5YjXj">here.</a>
+        </p>
+        <p>
+            Speakers "01"、"02"、"03"、"04"、"05"、"06" belong to the paper <a href="https://www.onacademic.com/detail/journal_1000039411826010_f256.html">here.</a>
+        </p>
+
+
+        <p>&nbsp;</p>
+        <h3>Comparision of proposed method to baseline methods</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <div align="center">Speakers</div>
+                    </th>
+                    <th>
+                        <p align="center">GMM_w</p>
+                    </th>
+                    <th>
+                        <p align="center">GMM_wo</p>
+                    </th>
+                    <th>
+                        <p align="center">BLSTM</p>
+                    </th>
+                    <th>
+                        <p align="center">NMC</p>
+                    </th>
+                    <th>
+                        <p align="center">PMC</p>
+                    </th>
+                    <th>
+                        <p align="center">PMCD</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td >female</td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/army/gmm/female/w_MLPG_1.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/army/gmm/female/wo_MLPG_1.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/army/blstm/female/1.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/army/nopara/female/1.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/army/para/female/1.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/army/para-adv2/female/1.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>
+                    </td>
+                </tr>
+                <tr>
+                    <td>male</td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/army/gmm/male/w_MLPG_1.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/army/gmm/male/wo_MLPG_1.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/army/blstm/male/1.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/army/nopara/male/1.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/army/para/male/1.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/army/para-adv2/male/1.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                </tr>
+                <tr>
+                    <td>01</td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/gmm/01/w_MLPG_011404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/gmm/01/wo_MLPG_011404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/blstm/01/011404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/non-para/01/011404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/para/01/011404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/para-adv2/01/011404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/gmm/02/w_MLPG_021404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/gmm/02/wo_MLPG_021404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/blstm/02/021404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/non-para/02/021404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/para/02/021404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/para-adv2/02/021404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                </tr>
+                <tr>
+                    <td>03</td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/gmm/03/w_MLPG_031404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/gmm/03/wo_MLPG_031404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/blstm/03/031404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/non-para/03/031404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/para/03/031404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/para-adv2/03/031404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                </tr>
+                <tr>
+                    <td>04</td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/gmm/04/w_MLPG_041404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/gmm/04/wo_MLPG_041404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/blstm/04/041404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/non-para/04/041404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/para/04/041404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/para-adv2/04/041404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                </tr>
+                <tr>
+                    <td>05</td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/gmm/05/w_MLPG_051404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/gmm/05/wo_MLPG_051404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/blstm/05/051404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/non-para/05/051404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/para/05/051404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/para-adv2/05/051404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                </tr>
+                <tr>
+                    <td>06</td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/gmm/06/w_MLPG_061404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/gmm/06/wo_MLPG_061404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/blstm/06/061404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/non-para/06/061404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/para/06/061404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                    <td>
+                        <audio controls>
+                            <source src="wavs/tai/para-adv2/06/061404.wav" type="audio/wav">
+                            Your browser does not support this audio format.
+                        </audio>    
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>"NMC" represents nonparallel CycleGAN, "PMC" indicates parallel CycleGAN, "PMCD" denotes parallel CycleGAN with dual adversarial loss.</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+    </body>
+</html>
+
